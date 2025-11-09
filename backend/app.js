@@ -5,6 +5,7 @@ import upload from "./middleware/uploadMiddleware.js"
 // import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import planRoutes from "./routes/planRoutes.js";
+import companyRoutes from "./routes/companyRoutes.js";
 
 dotenv.config();
 // connectDB();
@@ -28,5 +29,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", upload.single("logo"), authRoutes);
 app.use("/api/plans", planRoutes);
+app.use("/api/companies", companyRoutes);
 
 export default app;
